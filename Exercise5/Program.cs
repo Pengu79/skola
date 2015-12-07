@@ -79,7 +79,7 @@ namespace Exercise5
                 }
 
             } while (isRunning == true);
-
+            
         }
         public static void CreateJuice()
         {
