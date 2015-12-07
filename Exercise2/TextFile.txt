@@ -1,0 +1,7 @@
+﻿1:Att instansiera en typ innebär att du skapar ett nytt objekt med New.
+2:Kan kallas ett objekt.
+3:referenstyper: String Object värdetyper:int,bool,double,char
+4:Man kan skapa strings bool double arrayer och objekt.
+5:Stack är där namnet på ett object sparas samt adressen till var objektet på heapen ligger. stacken är ett snabbare minne och heapen ett större långsammare minne
+6: en variabel är ett visst värde du har i programmet. Man skapar en variable genom att skriva int apa; Tilldela ett värde är när man sätter apa=1; då får apa värdet 1 när man kallar på det i programmet
+  

@@ -1,0 +1,38 @@
+﻿1.1 CLR Common Language Runtime Detta gör om din kod till en exekverbar kod i nästa steg så körs JIT
+1.2 Base Class Library är t.ex System, System.IO
+1.3 Kompilera betyder att man gör om din kod från läsbarkod till exekveringsbar kod som din dator förstår.
+1.4 CIL står för Common Language Interpetator
+1.5 JIT Just in time compiling Kompilerar koden först när den behövs.
+1.6 Positivt är att den körs i en skyddad miljö som gör det säkrare. Negativt är att det kan bli lite sämre prestanda. Positivt är att detta gör att programmet fungerar på flera datorer än bara en.
+
+2.1 Identifierar är namnet du själv sätter på typ variabler.
+2.2 Den ska vara i camelCase eller PascalCase
+2.3 camelCase börjar på litenbokstav och följande ord börjar med storbokstav. PascalCase börjar på storbokstav och varje följande ord har storbokstav
+2.4 Nyckelord är ord som är standard kommandon i c# t.ex boolean int string return.
+2.5 Den gör skillnad på en variabel som börjar på liten bokstav och stor.
+2.6 Whitespace är mellanslag tab eller kan man använda \r\n  
+2.7 semikolon används för att terminera ett uttryck.
+2.8 Man grupperar utryck mellan {}(Måsvingar)
+2.9 Källkod bör vara själkommenterande med bra namn på variabler och metoder. Men måste man göra kommentarer kan man sätta två // för att kommentera en rad
+eller /* för att påbörja en flerrads kommentar och så slutar men med */. Det finns även ghostscript som man gör med ///.
+
+Uppgift 2
+
+    Ta bort avslutande semikolon från ett uttryck.
+	CS1002 ; expected
+
+    Döp om Main till Majn.
+	Program does not contain a static 'Main' method suitable for an entry point	Exercise1
+
+    Döp om class till klass.
+	The type or namespace name 'Klass' could not be found (are you missing a using directive or an assembly reference?)
+	<invalid-global-code>.Program': property or indexer must have at least one accessor
+
+    Ta bort en "stänga-måsvinge".
+	} expected
+
+    Kommentera bort "using System;"
+	The name 'Console' does not exist in the current context
+
+	Uppgift 4
+	Den rensade upp filer i bin Debug mappen för att
