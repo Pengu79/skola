@@ -1,21 +1,73 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Exercise4
 {
-    class Tv
+    internal class Tv
     {
-        private int channel;
-        private string brand;
-        public int Channel
+        private int _currentChannel;
+        private string _marke;
+        private int _maxChannels;
+        private int _volume;
+        public bool TurnTvOn { get; set; }
+
+        public int CurrentChannel
         {
-            get { return channel; }
-            set { channel = value; }
+            get { return _currentChannel; }
+            set
+            {
+                if (value >= 0 && value <= _maxChannels)
+                {
+                    _currentChannel = value;
+                }
+                else if (value > MaxChannels)
+                {
+                    _currentChannel = 0;
+                }
+                else
+                {
+                    _currentChannel = _maxChannels;
+                }
+            }
         }
 
+        public int Volume
+        {
+            get { return _volume; }
+            set
+            {
+                if (value >= 0 && value < 100)
+                {
+                    _volume = value;
+                }
+            }
+        }
 
+        public string Marke
+        {
+            get { return _marke; }
+            set
+            {
+                if (value != null)
+                {
+                    _marke = value;
+                }
+            }
+        }
+
+        public int MaxChannels
+        {
+            get { return _maxChannels; }
+            set
+            {
+                if (value > 0 && value <= 100)
+                {
+                    _maxChannels = value;
+                }
+                else
+                {
+                    throw new Exception("Ange en kanal mängd mellan 1-100");
+                }
+            }
+        }
     }
 }

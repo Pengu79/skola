@@ -16,12 +16,21 @@ namespace ovningArv
             Cat kurre = new Cat();
             Console.WriteLine(kurre.GetSound());
             Bengal benji = new Bengal();
-            Cat kalle = new Cat();
+            Cat kalle = new Cat {Weight = 50};
             //kalle = benji as Cat;
-            kalle.Weight = 50;
             Bengal bosse = new Bengal();
             bosse = kalle as Bengal;
-            Console.WriteLine(bosse.Weight);
+            bool test = kalle is Bengal;
+            Console.WriteLine(test);
+            if (bosse!=null)
+            {
+                Console.WriteLine(bosse.Weight);
+            }
+            else
+            {
+                Console.WriteLine("bosse är null");
+            }
+            
 
         }
 

@@ -15,12 +15,11 @@ namespace Exercise5
         public static string DrawMenu(string[] menuItems)
         {
             Console.Clear();
-            System.Text.StringBuilder menuText = new System.Text.StringBuilder();
+            StringBuilder menuText = new StringBuilder();
 
             for (int i = 0; i < menuItems.Length; i++)
             {
                 menuText.AppendLine(menuItems[i]);
-
             }
             return menuText.ToString();
         }
@@ -30,7 +29,7 @@ namespace Exercise5
             int userChoice;
             Console.WriteLine(DrawMenu(mainMenu));
             isLegit = int.TryParse(Console.ReadLine(), out userChoice);
-            if (isLegit == true)
+            if (isLegit)
             {
                 switch (userChoice)
                 {

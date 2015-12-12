@@ -1,23 +1,34 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Exercise4
 {
-    class Radio
+    internal class Radio
     {
-        private byte volym;
-        private bool turnRadioOn;
         private double frekvens;
-        static int instanceCount;
+        private byte volym;
 
-
-        public static int InstanceCount
+        static Radio()
         {
-            get { return instanceCount; }
+            InstanceCount = 0;
         }
+
+        public Radio()
+        {
+            InstanceCount++;
+            TurnRadioOn = false;
+            Frekvens = 103.5;
+            Volym = 50;
+        }
+
+        public Radio(double frekvens, byte volym) : this()
+        {
+            Frekvens = frekvens;
+            Volym = volym;
+        }
+
+
+        public static int InstanceCount { get; private set; }
+
         public double Frekvens
         {
             get { return frekvens; }
@@ -34,11 +45,7 @@ namespace Exercise4
             }
         }
 
-        public bool TurnRadioOn
-        {
-            get { return turnRadioOn; }
-            set { turnRadioOn = value; }
-        }
+        public bool TurnRadioOn { get; set; }
 
 
         public byte Volym
@@ -55,28 +62,11 @@ namespace Exercise4
                     throw new Exception("Volym ska anges mellan 0-100");
                 }
             }
+        }
 
-        }
-        static Radio()
-        {
-            instanceCount = 0;
-        }
-        public Radio()
-        {
-            instanceCount++;
-            TurnRadioOn = false;
-            Frekvens = 103.5;
-            Volym = 50;
-        }
-        public Radio(double frekvens, byte volym) : this()
-        {
-            Frekvens = frekvens;
-            Volym = volym;
-        }
         public override string ToString()
         {
-            return $"Frekvens:{frekvens} Volym:{volym} TurnRadioOn:{turnRadioOn} InstanceCount:{instanceCount}";
+            return $"Frekvens:{frekvens} Volym:{volym} TurnRadioOn:{TurnRadioOn} InstanceCount:{InstanceCount}";
         }
-
     }
 }

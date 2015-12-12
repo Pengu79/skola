@@ -68,8 +68,6 @@ namespace Exercise5
                         case "exitProgram":
                             isRunning = false;
                             break;
-                        default:
-                            break;
                     }
                 }
                 catch (Exception e)
@@ -78,7 +76,7 @@ namespace Exercise5
                     Console.WriteLine(e.Message);
                 }
 
-            } while (isRunning == true);
+            } while (isRunning);
             
         }
         public static void CreateJuice()

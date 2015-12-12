@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Exercise4
 {
     public class Bil
     {
-        private string marke, farg, typ;
         private int antalVaxlar;
+        private string marke, farg, typ;
 
         public int AntalVaxlar
         {
@@ -22,6 +18,7 @@ namespace Exercise4
                 }
             }
         }
+
         public string Marke
         {
             get { return marke; }
@@ -33,6 +30,7 @@ namespace Exercise4
                 }
             }
         }
+
         public string Farg
         {
             get { return farg; }
@@ -48,6 +46,7 @@ namespace Exercise4
                 }
             }
         }
+
         public string Typ
         {
             get { return typ; }
@@ -59,6 +58,7 @@ namespace Exercise4
                 }
             }
         }
+
         public virtual void Drive()
         {
             Console.WriteLine("Brum Brum");

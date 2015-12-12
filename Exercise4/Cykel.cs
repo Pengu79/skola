@@ -1,37 +1,62 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Exercise4
 {
-    class Cykel
+    internal class Cykel
     {
-        private string marke;
-        private int antalVaxlar;
-        private static int antalCyklar = 0;
+        private int _antalVaxlar;
+        private int _currentGear;
+        private string _marke;
+
+        //static Cykel()
+        //{
+        //    _antalCyklar++;
+        //}
+        public Cykel()
+        {
+            AntalCyklar++;
+            _marke = "No Name";
+            _antalVaxlar = 1;
+        }
+
+        public Cykel(string marke, int antalVaxlar) : this()
+        {
+            Marke = marke;
+            AntalVaxlar = antalVaxlar;
+        }
+
+        public int CurrentGear
+        {
+            get { return _currentGear; }
+            set
+            {
+                if (value >= 0 && value <= _antalVaxlar)
+                    _currentGear = value;
+                else
+                    throw new Exception("Ogiltig växel angiven");
+            }
+        }
 
         public int AntalVaxlar
         {
-            get { return antalVaxlar; }
+            get { return _antalVaxlar; }
             set
             {
                 if (value >= 1 && value <= 21)
                 {
-                    antalVaxlar = value;
+                    _antalVaxlar = value;
                 }
             }
         }
 
         public string Marke
         {
-            get { return marke; }
+            get { return _marke; }
             set
             {
                 if (value != null && value.Length >= 2)
                 {
-                    marke = value;
+                    _marke = value;
                 }
                 else
                 {
@@ -39,19 +64,23 @@ namespace Exercise4
                 }
             }
         }
-        static Cykel()
+
+        public static int AntalCyklar { get; private set; }
+
+        public void GearUp()
         {
-            antalCyklar++;
+            CurrentGear++;
         }
-        public Cykel()
+
+        public void GearDown()
         {
-            marke = "No Name";
-            antalVaxlar = 1;
+            CurrentGear--;
         }
-        public Cykel(string marke, int antalVaxlar) : this()
+
+        public void RingBell()
         {
-            Marke = marke;
-            AntalVaxlar = antalVaxlar;
+            Console.WriteLine("Pling Pling");
+            Console.Beep();
         }
     }
 }
