@@ -38,30 +38,30 @@ namespace Exercise5
                             currentState = Menu.DrawReStockMenu();
                             break;
                         case "restockAll":
-                            reStock<StockItem>();
+                            ReStock<StockItem>();
                             currentState = "restockItem";
                             break;
                         case "restockPlate":
-                            reStock<Plate>();
+                            ReStock<Plate>();
                             currentState = "restockItem";
                             break;
                         case "restockJuice":
-                            reStock<Juice>();
+                            ReStock<Juice>();
                             currentState = "restockItem";
                             break;
                         case "listItems":
                             currentState = Menu.DrawInventoryMenu();
                             break;
                         case "listAll":
-                            listStock<StockItem>();
+                            ListStock<StockItem>();
                             currentState = "listItems";
                             break;
                         case "listPlate":
-                            listStock<Plate>();
+                            ListStock<Plate>();
                             currentState = "listItems";
                             break;
                         case "listJuice":
-                            listStock<Juice>();
+                            ListStock<Juice>();
                             currentState = "listItems";
                             break;
 
@@ -295,7 +295,7 @@ namespace Exercise5
                 }
             }
         }
-        public static void reStock<T>()
+        public static void ReStock<T>()
         {
             int tempStock;
             bool validInput = false;
@@ -328,7 +328,7 @@ namespace Exercise5
                 }
             }
         }
-        public static void listStock<T>()
+        public static void ListStock<T>()
         {
             for (int i = 0; i < lagret.getLength(); i++)
             {
