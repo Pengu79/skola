@@ -32,7 +32,11 @@ namespace Exercise6
             this.Y = y;
             this.Z = z;
         }
-    public  s
+
+        public static explicit operator Point(Point3D point3D)
+        {
+            return new Point(point3D.X,point3D.Y);
+        }
         public override string ToString()
         {
             return $"X:{X}\n\rZ:{Z}\n\rY:{Y}";

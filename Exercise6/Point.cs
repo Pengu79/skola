@@ -30,7 +30,7 @@
 
         public static implicit operator Point3D(Point point)
         {
-            return new Point3D(point.X,point.Y);
+            return new Point(point.X,point.Y);
         }
     }
 }
